@@ -1,42 +1,39 @@
-//CLASS DECORATORS
-
-function Logger(target: Function) {
-    console.log("Class:", target);
-}
-
-// @Logger
-// class MyClass {
-//     // Class implementation
-// }
-
-
-//METHOD DECORATORS
-function Log(target: any, key: string, descriptor: PropertyDescriptor) {
-    const originalMethod = descriptor.value;
-
-    descriptor.value = function(...args: any[]) {
-        console.log(`Method ${key} is called with arguments: ${args}`);
-        const result = originalMethod.apply(this, args);
-        console.log(`Method ${key} returned: ${result}`);
-        return result;
+function helperDec(target: any, key: string, descriptor: PropertyDescriptor) {
+    console.log("target---->>>", target);
+    console.log("key--->>", key);
+    console.log("descriptor---->>>>", descriptor);
+  
+    const prev = descriptor.value;
+    const newMethod = {
+      configurable: true,
+      enumerable: false,
+      get() {
+        return prev.bind(this);
+      },
     };
+    return newMethod;
+  }
+  
 
-    return descriptor;
-}
+
 
 class MyClass {
-    @Log
-    myMethod() {
-        console.log("Executing myMethod");
-        return 42;
+    private msg: string;
+  
+    constructor(msg: string) {
+      this.msg = msg;
     }
-}
+  
+    @helperDec
+    printMsg() {
+      console.log(this.msg);
+    }
+  
+    setMsg(newMsg: string) {
+      this.msg = newMsg;
+    }
+  }
+  
 
-const obj = new MyClass();
-obj.myMethod();
-
-
-
-
-
-
+const obj = new MyClass("Helllo world!");
+document.getElementById("btn")?.addEventListener("click", obj.printMsg);
