@@ -1,26 +1,26 @@
-type StringOrNumber = string | number;
 
-type PersonObject = {
-  name: string;
-  id: StringOrNumber;
-};
+type gender = "male" | "female" | "nonbinary";
 
-const person1: PersonObject = {
-  name: 'John',
-  id: 1,
-};
+let male:gender = "male";
+let female:gender = "female";
+let nonbinary:gender = "nonbinary";
 
-const person2: PersonObject = {
-  name: 'Delia',
-  id: 2,
-};
+console.log(male, female, nonbinary)
 
-const sayHello = (person: PersonObject) => {
-  return 'Hi ' + person.name;
-};
 
-const sayGoodbye = (person: PersonObject) => {
-  return 'Seeya ' + person.name;
-};
 
-export{}
+
+
+let err:gender = "gen";  // assigning value which is not configured will throw compilation error 
+
+
+
+
+
+
+
+
+
+
+
+
