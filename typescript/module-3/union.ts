@@ -12,4 +12,4 @@ myVar = "hello"; // Valid - string type
 
 // myVar = true;    // Error - Type 'boolean' is not assignable to type 'number | string'
 
-//test= false;
+
