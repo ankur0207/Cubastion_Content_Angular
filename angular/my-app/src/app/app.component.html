@@ -1,0 +1,8 @@
+<h1 [ngClass]="{ x: y() }">Srijan</h1>
+<input
+  [placeholder]="condition"
+  [ngStyle]="{ color: condition ? 'red' : 'green' }"
+  type="text"
+/>
+
+<button (click)="handleClick()">change style</button>
