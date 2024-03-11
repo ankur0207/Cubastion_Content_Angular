@@ -1,4 +1,4 @@
-<h1 [ngClass]="{ x: y() }">Srijan</h1>
+<!-- <h1 [ngClass]="{ x: y() }">Srijan</h1>
 <input
   [placeholder]="condition"
   [ngStyle]="{ color: condition ? 'red' : 'green' }"
@@ -6,4 +6,51 @@
 />
 <h2>test</h2>
 
-<button (click)="handleClick()">change style</button>
+<button (click)="handleClick()">change style</button> -->
+
+<!-- @for (user of users; track $index) { @if(user.age>20) {
+<h1>{{ user.name }}</h1>
+} @else {
+<h1>{{ user.name }} is minor</h1>
+} } -->
+
+<!-- <h1 *ngFor="let user of users">{{ user.name }}</h1> -->
+
+<!-- <ng-container *ngFor="let user of users">
+  <h1 *ngIf="user.age > 20; else elseBlock">{{ user.name }}</h1>
+</ng-container> -->
+
+<!-- <ng-container>
+  <h1>efnjkdvjkvjdfbv</h1>
+</ng-container> -->
+
+<!-- <ng-template #elseBlock>
+  <h1>this is template</h1>
+</ng-template> -->
+
+<!-- @for (user of users; track $index) {} -->
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>age</th>
+      <th>isMinor</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (user of users; track $index) {
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.age }}</td>
+      @if (user.age>=18) {
+      <td>Adult</td>
+      } @else {
+      <td>minor</td>
+      }
+    </tr>
+    }
+  </tbody>
+</table>

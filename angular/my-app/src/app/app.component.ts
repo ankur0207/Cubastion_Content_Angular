@@ -18,4 +18,9 @@ export class AppComponent {
   y = () => {
     return this.condition;
   };
+  users = [
+    { id: 1, name: "vivek", age: 20 },
+    { id: 2, name: "srijan", age: 22 },
+    { id: 3, name: "gaaaa", age: 15 },
+  ];
 }
