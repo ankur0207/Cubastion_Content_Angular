@@ -30,7 +30,7 @@
 
 <!-- @for (user of users; track $index) {} -->
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>id</th>
@@ -53,4 +53,37 @@
     </tr>
     }
   </tbody>
-</table>
+</table> -->
+
+<!-- <element (event)="methodName()"> -->
+
+<!-- <button (click)="handleClick()">Click me</button> -->
+
+<!-- <button (click)="handleClick()">Click me</button> -->
+
+<input type="text" [(ngModel)]="name" />
+<h1>Hello, {{ name }}!</h1>
+<h1>{{ amount | currConverter : "USD" : "INR" }}</h1>
+
+<!-- <h1>{{ amount | currency : "INR" }}</h1>
+<h1>{{ name | uppercase }}</h1>
+<h2>{{ birthday | date : "shortDate" }}</h2> -->
+<!-- <input
+  type="text"
+  (input)="handleInput($event)"
+  placeholder="enter some text"
+/> -->
+
+<!-- 
+<img [src]="imageURL" alt="Example Image">
+<button [disabled]="isDisabled">Click me</button> -->
+
+<!-- <h1>{{ title }}</h1>
+<p>User Name: {{ user.name }}</p>
+<p>User Age: {{ user.age }}</p> -->
+
+<!-- <h1>counter is: {{ 2 * incrementCounter() }}</h1> -->
+
+<button mat-raised-button color="accent">Accent</button>
+
+<app-child1></app-child1>
