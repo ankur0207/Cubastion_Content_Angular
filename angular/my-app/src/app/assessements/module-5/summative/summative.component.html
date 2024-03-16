@@ -1,0 +1,22 @@
+<p>summative works!</p>
+
+<table>
+  <thead></thead>
+  <tbody>
+    @for(field of userFormFields;track $index) {
+    <tr>
+      <td>{{ field.fieldName }}</td>
+      <td>
+        <input
+          [maxLength]="10"
+          [type]="field.type"
+          [placeholder]="field.placeHolder"
+          [value]="field.value"
+          (keydown)="handleInput(field.fieldName, $event)"
+          [disabled]="checkForDisabled(field.fieldName)"
+        />
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

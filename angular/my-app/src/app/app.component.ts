@@ -5,6 +5,7 @@ import { RouterOutlet } from "@angular/router";
 import { CurrConverterPipe } from "./pipes/curr-converter.pipe";
 import { MatButtonModule } from "@angular/material/button";
 import { Child1Component } from "./components/child1/child1.component";
+import { SummativeComponent } from "./assessements/module-5/summative/summative.component";
 @Component({
   selector: "app-root",
   standalone: true,
@@ -15,6 +16,7 @@ import { Child1Component } from "./components/child1/child1.component";
     CurrConverterPipe,
     MatButtonModule,
     Child1Component,
+    SummativeComponent,
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
